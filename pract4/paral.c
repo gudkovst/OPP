@@ -49,16 +49,16 @@ short sost(const short* map, int i, int j, int n, int m){
 }
 
 int main(int argc, char** argv){
-	MPI_Init(&argc, &argv);
-	int size, rank, kstr, countSmallProc, iter = 0, N = atoi(argv[1]), M = atoi(argv[2]);
+    MPI_Init(&argc, &argv);
+    int size, rank, kstr, countSmallProc, iter = 0, N = atoi(argv[1]), M = atoi(argv[2]);
     double starttime, endtime;
-	short* map[2], * birth;
+    short* map[2], * birth;
     short* sumflags = (short*)malloc(K * sizeof(short));
-	int* hist[K];
+    int* hist[K];
     short flags[K] = {0};
-	MPI_Request reqtop, reqdown, sendtop, senddown;
+    MPI_Request reqtop, reqdown, sendtop, senddown;
 
-	MPI_Comm_size(MPI_COMM_WORLD, &size);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     int rcount[size], displs[size];
     if (!rank){
