@@ -43,12 +43,12 @@ short sost(const short* map, int i, int j, int n, int m){
 }
 
 int main(int argc, char** argv){
-	int count, N = atoi(argv[1]), M = atoi(argv[2]);
+    int count, N = atoi(argv[1]), M = atoi(argv[2]);
     struct tms starttime, endtime;
     long clk_per_sec = sysconf(_SC_CLK_TCK);
     long clocks;
-	short* map[2];
-	int* hist[K];
+    short* map[2];
+    int* hist[K];
     FILE* fin = fopen("data.txt", "r");
     map[0] = (short*)malloc(N * M * sizeof(short));
     map[1] = (short*)malloc(N * M * sizeof(short));
